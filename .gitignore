@@ -1,0 +1,6 @@
+Pipfile
+*.lock
+*.exe
+*.def
+*.dll
+yahoo_scraper.py
