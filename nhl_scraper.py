@@ -11,6 +11,10 @@ from requests_html import HTMLSession
 import json
 import time
 
+# class NHLScraper():
+#     def __init__(self):
+#         self.get_teams()
+
 session = requests.session()
 teams_list = []
 
@@ -44,6 +48,7 @@ def log_error(e):
 
 def get_teams(url):
     teams_page_response = get_page(url)
+    print('Ye')
     team_tree = html.fromstring(teams_page_response.content)
     teams = team_tree.find_class('team-name')
 
@@ -80,8 +85,9 @@ def get_team_rosters():
 
     print(json.dumps(all_team_rosters, indent=4))
     
-
-
-
 get_teams("https://www.nhl.com/info/teams")
 get_team_rosters()
+
+
+# x = NHLScraper()
+# x.get_teams("https://www.nhl.com/info/teams")
